@@ -13,12 +13,12 @@ async function insertParagraph(event) {
   Word.run(async (context) => {
     // insert a paragraph at the end of the document.
     const paragraph = context.document.body.insertParagraph(
-      "ExecuteFunction works. Button ID=" + event.source.id,
+      "ExecuteFunction works. Button ID=" /*+ event.source.id*/,
       Word.InsertLocation.end
     );
 
     // change the paragraph color to blue.
-    paragraph.font.color = "blue";
+    //paragraph.font.color = "blue";
 
     await context.sync();
   });
