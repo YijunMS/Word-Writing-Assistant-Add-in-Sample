@@ -9,22 +9,20 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
-/**
- * Shows a notification when the add-in command is executed.
- * @param event
- */
-function action(event: Office.AddinCommands.Event) {
-  const message: Office.NotificationMessageDetails = {
-    type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
-    message: "Performed action.",
-    icon: "Icon.80x80",
-    persistent: true,
-  };
+async function insertParagraph(event) {
+  // Implement your custom code here. The following code is a simple Excel example.
+  try {
+    await Word.run(async (context) => {
+      const body = context.document.body;
+      body.insertParagraph("Hello World", Word.InsertLocation.end);
+      await context.sync();
+    });
+  } catch (error) {
+    // Note: In a production add-in, notify the user through your add-in's UI.
+    //console.error(error);
+  }
 
-  // Show a notification message
-  Office.context.mailbox.item.notificationMessages.replaceAsync("action", message);
-
-  // Be sure to indicate when the add-in command function is complete
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
   event.completed();
 }
 
@@ -40,5 +38,4 @@ function getGlobal() {
 
 const g = getGlobal() as any;
 
-// The add-in command functions need to be available in global scope
-g.action = action;
+Office.actions.associate("insertParagraph", insertParagraph);
