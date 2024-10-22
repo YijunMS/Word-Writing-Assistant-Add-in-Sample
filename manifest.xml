@@ -103,7 +103,7 @@
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-        <bt:Url id="JsRuntime.Url" DefaultValue="https://raw.githubusercontent.com/YijunMS/Word-Writing-Assistant-Add-in-Sample/refs/heads/autoruntest/src/commands/autoruncommands.js"/>
+        <bt:Url id="JsRuntime.Url" DefaultValue="https://raw.githubusercontent.com/YijunMS/Word-Writing-Assistant-Add-in-Sample/refs/heads/autoruntest2/src/commands/autoruncommands.js"/>
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
