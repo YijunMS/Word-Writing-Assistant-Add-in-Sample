@@ -18,9 +18,14 @@ async function insertParagraph(event) {
     );
 
     // change the paragraph color to blue.
-    //paragraph.font.color = "blue";
+    paragraph.font.color = "blue";
 
     await context.sync();
+
+    const paragraphs = context.document.body.paragraphs;
+    paragraphs.load();
+    await context.sync();
+    context.document.body.insertParagraph("current paragraph count: " + paragraphs.items.length, "End");
   });
 
   // Calling event.completed is required. event.completed lets the platform know that processing has completed.
