@@ -42,7 +42,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnOpen" FunctionName="insertParagraph"></LaunchEvent>
+              <LaunchEvent Type="OnWXPOpen" FunctionName="insertParagraph"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
