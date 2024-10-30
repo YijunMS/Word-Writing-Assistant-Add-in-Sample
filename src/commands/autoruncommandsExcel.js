@@ -9,23 +9,6 @@ Office.onReady(() => {
   // If needed, Office.js is ready to be called
 });
 
-async function insertParagraph(event) {
-  // Implement your custom code here. The following code is a simple Excel example.
-  try {
-    await Word.run(async (context) => {
-      const body = context.document.body;
-      body.insertParagraph("Hello World", Word.InsertLocation.end);
-      await context.sync();
-    });
-  } catch (error) {
-    // Note: In a production add-in, notify the user through your add-in's UI.
-    //console.error(error);
-  }
-
-  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed();
-}
-
 async function insertTable(event) {
   // Implement your custom code here. The following code is a simple Excel example.
   try {
@@ -71,7 +54,8 @@ function getGlobal() {
     : undefined;
 }
 
-const g = getGlobal() as any;
+const g = getGlobal();
 
-Office.actions.associate("insertParagraph", insertParagraph);
+// The add-in command functions need to be available in global scope
+
 Office.actions.associate("insertTable", insertTable);
