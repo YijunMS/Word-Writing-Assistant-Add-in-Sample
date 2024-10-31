@@ -61,6 +61,30 @@ async function insertTable(event) {
   event.completed();
 }
 
+async function addTextBox(event) {
+  // Implement your custom code here. The following code is a simple Excel example.
+  try {
+    await PowerPoint.run(async (context) => {
+      const shapes: PowerPoint.ShapeCollection = context.presentation.slides.getItemAt(0).shapes;
+      const shapeOptions: PowerPoint.ShapeAddOptions = {
+        left: 100,
+        top: 300,
+        height: 300,
+        width: 450,
+      };
+      const textbox: PowerPoint.Shape = shapes.addTextBox("Hello!", shapeOptions);
+
+      await context.sync();
+    });
+  } catch (error) {
+    // Note: In a production add-in, notify the user through your add-in's UI.
+    //console.error(error);
+  }
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+
 function getGlobal() {
   return typeof self !== "undefined"
     ? self
@@ -75,3 +99,4 @@ const g = getGlobal() as any;
 
 Office.actions.associate("insertParagraph", insertParagraph);
 Office.actions.associate("insertTable", insertTable);
+Office.actions.associate("addTextBox", addTextBox);
