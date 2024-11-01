@@ -163,6 +163,9 @@
       <Host xsi:type="Presentation">
       <Runtimes>
         <Runtime resid="Taskpane.Url" lifetime="long" />
+        <Runtime resid="WebViewRuntime.Url">
+          <Override type="javascript" resid="JsRuntimePPT.Url"/>
+        </Runtime>
       </Runtimes>
         <DesktopFormFactor>
           <GetStarted>
@@ -171,6 +174,12 @@
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
           <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="LaunchEvent">
+            <LaunchEvents>
+              <LaunchEvent Type="OnWXPOpen" FunctionName="addTextBox"></LaunchEvent>
+            </LaunchEvents>
+            <SourceLocation resid="WebViewRuntime.Url"/>
+          </ExtensionPoint>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup">
@@ -230,6 +239,7 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
         <bt:Url id="JsRuntime.Url" DefaultValue="https://raw.githubusercontent.com/YijunMS/Word-Writing-Assistant-Add-in-Sample/refs/heads/autoruntest/src/commands/autoruncommands.js"/>
         <bt:Url id="JsRuntimeExcel.Url" DefaultValue="https://raw.githubusercontent.com/YijunMS/Word-Writing-Assistant-Add-in-Sample/refs/heads/autoruntest/src/commands/autoruncommandsExcel.js"/>
+        <bt:Url id="JsRuntimePPT.Url" DefaultValue="https://raw.githubusercontent.com/YijunMS/Word-Writing-Assistant-Add-in-Sample/refs/heads/autoruntest/src/commands/autoruncommandsPPT.js"/>
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
