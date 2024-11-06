@@ -44,7 +44,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnWXPOpen" FunctionName="insertParagraph"></LaunchEvent>
+              <LaunchEvent Type="OnDocumentOpen" FunctionName="insertParagraph"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
@@ -110,7 +110,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnWXPOpen" FunctionName="insertTable"></LaunchEvent>
+              <LaunchEvent Type="OnDocumentOpen" FunctionName="insertTable"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
@@ -176,7 +176,7 @@
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnWXPOpen" FunctionName="addTextBox"></LaunchEvent>
+              <LaunchEvent Type="OnDocumentOpen" FunctionName="addTextBox"></LaunchEvent>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
