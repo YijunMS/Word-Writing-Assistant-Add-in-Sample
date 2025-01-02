@@ -21,7 +21,7 @@ async function insertTable(event) {
       expensesTable.getHeaderRowRange().values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"]];
 
       expensesTable.rows.add(null, [
-        ["Frames", 5000, 7000, 6544, 4377],
+        ["FramesTest", 5000, 7000, 6544, 4377],
         ["Saddles", 400, 323, 276, 651],
         ["Brake levers", 12000, 8766, 8456, 9812],
         ["Chains", 1550, 1088, 692, 853],
